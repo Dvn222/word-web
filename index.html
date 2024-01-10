@@ -3,28 +3,56 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Spelling Quiz for Kids</title>
+    <title>Spelling Quiz for Fifth Graders</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Comic Sans MS', cursive, sans-serif;
             text-align: center;
+            background-color: #f7f7f7;
+            margin: 0;
+            padding: 0;
         }
         #quiz-container {
             max-width: 600px;
             margin: 20px auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
         .word-container {
             margin-bottom: 20px;
+        }
+        button {
+            background-color: #4caf50;
+            color: #fff;
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        input {
+            padding: 10px;
+            font-size: 16px;
+        }
+        p {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+        p.feedback {
+            margin-top: 10px;
         }
     </style>
 </head>
 <body>
 
 <div id="quiz-container">
-    <h1>Spelling Quiz for Kids</h1>
+    <h1>Spelling Quiz for Fifth Graders</h1>
 
     <div class="word-container" id="word1">
-        <p>Number 1. </p>
+        <p>1. Preferable</p>
         <button onclick="speakWord('preferable')">Hear Word</button>
         <br>
         <input type="text" id="answer1" placeholder="Type your answer">
@@ -32,82 +60,37 @@
     </div>
 
     <div class="word-container" id="word2">
-        <p>Number 2. </p>
-        <button onclick="speakWord('defendant')">Hear Word</button>
+        <p>2. Distinguishable</p>
+        <button onclick="speakWord('distinguishable')">Hear Word</button>
         <br>
         <input type="text" id="answer2" placeholder="Type your answer">
-        <button onclick="checkAnswer('defendant', 'answer2')">Check</button>
+        <button onclick="checkAnswer('distinguishable', 'answer2')">Check</button>
     </div>
 
-     <div class="word-container" id="word3">
-        <p>Number 3. </p>
-        <button onclick="speakWord('Gaseous')">Hear Word</button>
+    <div class="word-container" id="word3">
+        <p>3. Petroleum</p>
+        <button onclick="speakWord('petroleum')">Hear Word</button>
         <br>
         <input type="text" id="answer3" placeholder="Type your answer">
-        <button onclick="checkAnswer('gaseous', 'answer3')">Check</button>
-    </div> 
+        <button onclick="checkAnswer('petroleum', 'answer3')">Check</button>
+    </div>
 
-     <div class="word-container" id="word4">
-        <p>Number 4. </p>
-        <button onclick="speakWord('Petroleum')">Hear Word</button>
+    <div class="word-container" id="word4">
+        <p>4. Gaseous</p>
+        <button onclick="speakWord('gaseous')">Hear Word</button>
         <br>
         <input type="text" id="answer4" placeholder="Type your answer">
-        <button onclick="checkAnswer('petroleum', 'answer4')">Check</button>
-    </div> 
+        <button onclick="checkAnswer('gaseous', 'answer4')">Check</button>
+    </div>
 
-     <div class="word-container" id="word5">
-        <p>Number 5. </p>
-        <button onclick="speakWord('Distinguishable')">Hear Word</button>
+    <div class="word-container" id="word5">
+        <p>5. Rhythm</p>
+        <button onclick="speakWord('rhythm')">Hear Word</button>
         <br>
         <input type="text" id="answer5" placeholder="Type your answer">
-        <button onclick="checkAnswer('distinguishable', 'answer5')">Check</button>
-    </div> 
+        <button onclick="checkAnswer('rhythm', 'answer5')">Check</button>
+    </div>
 
-     <div class="word-container" id="word6">
-        <p>Number 6. </p>
-        <button onclick="speakWord('Debatable')">Hear Word</button>
-        <br>
-        <input type="text" id="answer6" placeholder="Type your answer">
-        <button onclick="checkAnswer('debatable', 'answer6')">Check</button>
-    </div> 
+    <div class="word-container" id="word6">
+        <p>6. Impatient</
 
-     <div class="word-container" id="word7">
-        <p>Number 7. </p>
-        <button onclick="speakWord('Rhythm')">Hear Word</button>
-        <br>
-        <input type="text" id="answer7" placeholder="Type your answer">
-        <button onclick="checkAnswer('rhythm', 'answer7')">Check</button>
-    </div> 
-
-     <div class="word-container" id="word8">
-        <p>Number 8. </p>
-        <button onclick="speakWord('Impatient')">Hear Word</button>
-        <br>
-        <input type="text" id="answer8" placeholder="Type your answer">
-        <button onclick="checkAnswer('impatient', 'answer8')">Check</button>
-    </div> 
-
-    <!-- Repeat the above structure for the remaining words -->
-
-</div>
-
-<script>
-    function speakWord(word) {
-        var utterance = new SpeechSynthesisUtterance(word);
-        window.speechSynthesis.speak(utterance);
-    }
-
-    function checkAnswer(correctAnswer, inputId) {
-        var userAnswer = document.getElementById(inputId).value.toLowerCase();
-        var feedbackContainer = document.getElementById(inputId).parentNode;
-
-        if (userAnswer === correctAnswer) {
-            feedbackContainer.innerHTML += '<p style="color: green;">Correct!</p>';
-        } else {
-            feedbackContainer.innerHTML += '<p style="color: red;">Incorrect. Try again!</p>';
-        }
-    }
-</script>
-
-</body>
-</html>
