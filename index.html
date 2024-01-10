@@ -52,7 +52,7 @@
     <h1>Spelling Quiz for Fifth Graders</h1>
 
     <div class="word-container" id="word1">
-        <p>1. Preferable</p>
+        <p>Number 1. </p>
         <button onclick="speakWord('preferable')">Hear Word</button>
         <br>
         <input type="text" id="answer1" placeholder="Type your answer">
@@ -60,7 +60,7 @@
     </div>
 
     <div class="word-container" id="word2">
-        <p>2. Distinguishable</p>
+        <p>Number 2. </p>
         <button onclick="speakWord('distinguishable')">Hear Word</button>
         <br>
         <input type="text" id="answer2" placeholder="Type your answer">
@@ -68,7 +68,7 @@
     </div>
 
     <div class="word-container" id="word3">
-        <p>3. Petroleum</p>
+        <p>Number 3. </p>
         <button onclick="speakWord('petroleum')">Hear Word</button>
         <br>
         <input type="text" id="answer3" placeholder="Type your answer">
@@ -76,7 +76,7 @@
     </div>
 
     <div class="word-container" id="word4">
-        <p>4. Gaseous</p>
+        <p>Number 4. </p>
         <button onclick="speakWord('gaseous')">Hear Word</button>
         <br>
         <input type="text" id="answer4" placeholder="Type your answer">
@@ -84,7 +84,7 @@
     </div>
 
     <div class="word-container" id="word5">
-        <p>5. Rhythm</p>
+        <p>Number 5. </p>
         <button onclick="speakWord('rhythm')">Hear Word</button>
         <br>
         <input type="text" id="answer5" placeholder="Type your answer">
@@ -92,5 +92,50 @@
     </div>
 
     <div class="word-container" id="word6">
-        <p>6. Impatient</
+        <p>NUmber 6. </p>
+        <button onclick="speakWord('impatient')">Hear Word</button>
+        <br>
+        <input type="text" id="answer6" placeholder="Type your answer">
+        <button onclick="checkAnswer('impatient', 'answer6')">Check</button>
+    </div>
+
+    <div class="word-container" id="word7">
+        <p>Number 7. </p>
+        <button onclick="speakWord('defendant')">Hear Word</button>
+        <br>
+        <input type="text" id="answer7" placeholder="Type your answer">
+        <button onclick="checkAnswer('defendant', 'answer7')">Check</button>
+    </div>
+
+    <div class="word-container" id="word8">
+        <p>Number 8. </p>
+        <button onclick="speakWord('debatable')">Hear Word</button>
+        <br>
+        <input type="text" id="answer8" placeholder="Type your answer">
+        <button onclick="checkAnswer('debatable', 'answer8')">Check</button>
+    </div>
+
+</div>
+
+<script>
+    function speakWord(word) {
+        var utterance = new SpeechSynthesisUtterance(word);
+        window.speechSynthesis.speak(utterance);
+    }
+
+    function checkAnswer(correctAnswer, inputId) {
+        var userAnswer = document.getElementById(inputId).value.toLowerCase();
+        var feedbackContainer = document.getElementById(inputId).parentNode;
+
+        if (userAnswer === correctAnswer) {
+            feedbackContainer.innerHTML += '<p class="feedback" style="color: green;">Correct!</p>';
+        } else {
+            feedbackContainer.innerHTML += '<p class="feedback" style="color: red;">Incorrect. Try again!</p>';
+        }
+    }
+</script>
+
+</body>
+</html>
+
 
