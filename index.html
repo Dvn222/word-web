@@ -60,6 +60,11 @@
 </div>
 
 <script>
+
+      function speakWord(word) {
+        var utterance = new SpeechSynthesisUtterance(word);
+        window.speechSynthesis.speak(utterance);
+          
     function checkAnswer(correctAnswer, inputId) {
         var userAnswer = document.getElementById(inputId).value.toLowerCase();
         var feedbackContainer = document.getElementById(inputId).parentNode;
