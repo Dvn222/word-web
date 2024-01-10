@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spelling Quiz for Kids</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        #quiz-container {
+            max-width: 600px;
+            margin: 20px auto;
+        }
+        .word-container {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<div id="quiz-container">
+    <h1>Spelling Quiz for Kids</h1>
+
+    <div class="word-container" id="word1">
+        <p>1. Elephant</p>
+        <input type="text" id="answer1" placeholder="Type your answer">
+        <button onclick="checkAnswer('elephant', 'answer1')">Check</button>
+    </div>
+
+    <div class="word-container" id="word2">
+        <p>2. Sunshine</p>
+        <input type="text" id="answer2" placeholder="Type your answer">
+        <button onclick="checkAnswer('sunshine', 'answer2')">Check</button>
+    </div>
+
+    <!-- Repeat the above structure for the remaining words -->
+
+</div>
+
+<script>
+    function checkAnswer(correctAnswer, inputId) {
+        var userAnswer = document.getElementById(inputId).value.toLowerCase();
+        var feedbackContainer = document.getElementById(inputId).parentNode;
+
+        if (userAnswer === correctAnswer) {
+            feedbackContainer.innerHTML += '<p style="color: green;">Correct!</p>';
+        } else {
+            feedbackContainer.innerHTML += '<p style="color: red;">Incorrect. Try again!</p>';
+        }
+    }
+</script>
+
+</body>
+</html>
